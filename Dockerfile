@@ -1,7 +1,6 @@
 FROM node:19-slim as base
 WORKDIR "/app"
-COPY ./package.json ./
-COPY ./package-lock.json ./
+COPY ./package.json ./package-lock.json ./
 RUN npm install
 
 COPY ./src ./src
