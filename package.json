@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=dev ts-node-dev --ignore-watch node_modules --inspect=0.0.0.0:9267 ./src/api/server.ts",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "serve-debug": "nodemon --inspect dist/server.js",
-    "serve": "node dist/server.js",
+    "serve": "node dist/api/server.js",
     "start": "npm run serve",
     "test": "jest --forceExit --coverage --verbose",
     "watch-node": "nodemon dist/server.js",
@@ -38,7 +38,7 @@
     "jest": "^26.0.0",
     "nodemon": "^2.0.3",
     "supertest": "^4.0.2",
-    "ts-jest": "^25.4.0",
+    "ts-jest": "^26.0.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
   }
