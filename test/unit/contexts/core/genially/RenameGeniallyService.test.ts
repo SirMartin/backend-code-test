@@ -1,6 +1,6 @@
-import GeniallyRepository from "../../../../src/contexts/core/genially/domain/GeniallyRepository";
-import Genially from "../../../../src/contexts/core/genially/domain/Genially";
-import RenameGeniallyService from "../../../../src/contexts/core/genially/application/RenameGeniallyService"
+import GeniallyRepository from "../../../../../src/contexts/core/genially/domain/GeniallyRepository";
+import Genially from "../../../../../src/contexts/core/genially/domain/Genially";
+import RenameGeniallyService from "../../../../../src/contexts/core/genially/application/RenameGeniallyService"
 
 describe("RenameGeniallyService", () => {
     it("should rename a Genially", async () => {
