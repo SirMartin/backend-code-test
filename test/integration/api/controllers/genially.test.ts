@@ -9,8 +9,8 @@ describe("Genially Controller", () => {
                 .send({ id: "an_id", name: "a_name", description: "a_description" });
 
             expect(res.status).toEqual(201);
-        })
-    })
+        });
+    });
 
     describe("PUT /genially", () => {
         it("should return 200", async () => {
@@ -23,8 +23,8 @@ describe("Genially Controller", () => {
                 .send({ name: "a_better_name" });
 
             expect(resRename.status).toEqual(200);
-        })
-    })
+        });
+    });
 
     describe("DELETE /genially", () => {
         it("should return 204", async () => {
@@ -37,6 +37,6 @@ describe("Genially Controller", () => {
                 .send();
 
             expect(res.status).toEqual(204);
-        })
-    })
+        });
+    });
 });

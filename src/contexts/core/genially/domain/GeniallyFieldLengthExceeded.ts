@@ -1,0 +1,1 @@
+export class GeniallyFieldLengthExceeded extends Error {}

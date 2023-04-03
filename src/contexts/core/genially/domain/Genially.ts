@@ -1,44 +1,60 @@
-export default class Genially {
-  private _id: string;
-  private _name: string;
-  private _description: string;
-  private _createdAt: Date;
-  private _modifiedAt: Date;
-  private _deletedAt: Date;
+import { DateValueObject } from "../../../shared/DateValueObject";
+import GeniallyCreatedAt from "./GeniallyCreatedAt";
+import GeniallyDeletedAt from "./GeniallyDeletedAt";
+import GeniallyDescription from "./GeniallyDescription";
+import GeniallyId from "./GeniallyId";
+import GeniallyName from "./GeniallyName";
+import GeniallyModifiedAt from "./GeniallyUpdatedAt";
 
-  constructor(id: string, name: string, description?: string, createdAt?: Date) {
+export default class Genially {
+  private readonly _id: GeniallyId;
+  private readonly _name: GeniallyName;
+  private readonly _description: GeniallyDescription;
+  private readonly _createdAt: GeniallyCreatedAt;
+  private readonly _modifiedAt: GeniallyModifiedAt;
+  private readonly _deletedAt: GeniallyDeletedAt;
+
+  constructor(id: GeniallyId, name: GeniallyName, description?: GeniallyDescription, createdAt?: DateValueObject) {
     this._id = id;
     this._name = name;
     this._description = description;
     this._createdAt = createdAt;
   }
 
-  static create(id: string, name: string, description?: string)
+  static create(id: GeniallyId, name: GeniallyName, description?: GeniallyDescription)
   {
-    return new this(id, name, description, new Date());
+    return new this(id, name, description, new GeniallyCreatedAt(new Date()));
   }
 
-  get id(): string {
+  toPrimitives() {
+    return {
+      id: this._id.value,
+      name: this._name.value,
+      description: this._description.value
+    }
+  }
+
+  get id(): GeniallyId {
     return this._id;
   }
 
-  get name(): string {
+  get name(): GeniallyName {
     return this._name;
   }
 
-  get description(): string {
+  get description(): GeniallyDescription {
     return this._description;
   }
 
-  get createdAt(): Date {
+  get createdAt(): GeniallyCreatedAt {
     return this._createdAt;
   }
 
-  get modifiedAt(): Date {
+  get modifiedAt(): GeniallyModifiedAt {
     return this._modifiedAt;
   }
 
-  get deletedAt(): Date {
+  get deletedAt(): GeniallyDeletedAt {
     return this._deletedAt;
   }
 }

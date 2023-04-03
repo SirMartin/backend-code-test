@@ -9,6 +9,6 @@ describe("Health Controller", () => {
             .send();
 
             expect(res.status).toEqual(200);
-        })
-    })
+        });
+    });
 });
