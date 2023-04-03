@@ -13,7 +13,7 @@ describe("DeleteGeniallyService", () => {
         const id = "an_id"
         const name = "a_name"
         const description = "a_description"
-        const expectedGenially = new Genially(id, name, description);
+        const expectedGenially = Genially.create(id, name, description);
 
         await deleteGeniallyService.execute(expectedGenially.id);
     

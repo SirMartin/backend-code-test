@@ -1,6 +1,6 @@
-import GeniallyRepository from "../../../../../src/contexts/core/genially/domain/GeniallyRepository";
-import Genially from "../../../../../src/contexts/core/genially/domain/Genially";
-import CreateGeniallyService from "../../../../../src/contexts/core/genially/application/CreateGeniallyService"
+import GeniallyRepository from "../../../../../../src/contexts/core/genially/domain/GeniallyRepository";
+import Genially from "../../../../../../src/contexts/core/genially/domain/Genially";
+import CreateGeniallyService from "../../../../../../src/contexts/core/genially/application/CreateGeniallyService"
 
 describe("CreateGeniallyService", () => {
     it("should create a Genially", async () => {
@@ -13,7 +13,7 @@ describe("CreateGeniallyService", () => {
         const id = "an_id"
         const name = "a_name"
         const description = "a_description"
-        const expectedGenially = new Genially(id, name, description);
+        const expectedGenially = Genially.create(id, name, description);
 
         await createGeniallyService.execute({
                  id: "an_id",

@@ -8,12 +8,10 @@ type CreateGeniallyServiceRequest = {
 };
 
 export default class CreateGeniallyService {
-  constructor(private repository: GeniallyRepository) {}
+  constructor(private readonly repository: GeniallyRepository) {}
 
   public async execute(req: CreateGeniallyServiceRequest): Promise<Genially> {
-    const { id, name, description } = req;
-
-    const genially = new Genially(id, name, description);
+    const genially = Genially.create(req.id, req.name, req.description);
 
     await this.repository.save(genially);
 

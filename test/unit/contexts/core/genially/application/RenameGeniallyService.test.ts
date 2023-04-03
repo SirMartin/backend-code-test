@@ -8,8 +8,8 @@ describe("RenameGeniallyService", () => {
         const name = "a_name"
         const description = "a_description"
         const newName = "a_new_name";
-        const originalGenially = new Genially(id, name, description);
-        const expectedGenially = new Genially(id, newName, description);
+        const originalGenially = Genially.create(id, name, description);
+        const expectedGenially = new Genially(id, newName, description, originalGenially.createdAt);
         const repository: GeniallyRepository = {
             save: jest.fn(),
             find: jest.fn().mockReturnValue(originalGenially),
