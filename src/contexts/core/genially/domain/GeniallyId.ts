@@ -1,7 +1,3 @@
-import { StringValueObject } from "../../../shared/ValueObjects/StringValueObject";
+import { Uuid } from "../../../shared/ValueObjects/Uuid";
 
-export default class GeniallyId extends StringValueObject{
-    constructor(value: string) {
-        super(value);
-    }
-}
+export default class GeniallyId extends Uuid { }

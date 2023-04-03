@@ -16,7 +16,7 @@ describe("CreateGeniallyService", () => {
             delete: jest.fn()
         };
         const createGeniallyService = new CreateGeniallyService(repository);
-        const id = "an_id";
+        const id = "d25bc90b-8b2b-4e18-b6aa-929330b5f6a7";
         const name = "a_name";
         const description = "a_description";
         const expectedGenially = Genially.create(new GeniallyId(id), new GeniallyName(name), new GeniallyDescription(description));
@@ -35,7 +35,7 @@ describe("CreateGeniallyService", () => {
                 delete: jest.fn()
             };
             const createGeniallyService = new CreateGeniallyService(repository);
-            const id = "an_id";
+            const id = "d25bc90b-8b2b-4e18-b6aa-929330b5f6a7";
             const name = "a";
             const description = "a_description";
             const expectedGenially = Genially.create(new GeniallyId(id), new GeniallyName(name), new GeniallyDescription(description));
@@ -55,7 +55,7 @@ describe("CreateGeniallyService", () => {
                 delete: jest.fn()
             };
             const createGeniallyService = new CreateGeniallyService(repository);
-            const id = "an_id";
+            const id = "d25bc90b-8b2b-4e18-b6aa-929330b5f6a7";
             const name = "a".repeat(30);
             const description = "a_description";
             const expectedGenially = Genially.create(new GeniallyId(id), new GeniallyName(name), new GeniallyDescription(description));
@@ -75,7 +75,7 @@ describe("CreateGeniallyService", () => {
                 delete: jest.fn()
             };
             const createGeniallyService = new CreateGeniallyService(repository);
-            const id = "an_id";
+            const id = "d25bc90b-8b2b-4e18-b6aa-929330b5f6a7";
             const name = "a".repeat(30);
             const description = "a_description";
             const expectedGenially = Genially.create(new GeniallyId(id), new GeniallyName(name), new GeniallyDescription(description));
