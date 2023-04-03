@@ -17,8 +17,8 @@ describe("RenameGeniallyService", () => {
         }
         const renameGeniallyService = new RenameGeniallyService(repository);
 
-        await renameGeniallyService.execute(id, newName);
-    
+        await renameGeniallyService.execute({ id, newName });
+
         expect(repository.find).toHaveBeenCalledWith(id)
         expect(repository.save).toHaveBeenCalledWith(expectedGenially)
     });

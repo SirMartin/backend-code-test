@@ -16,10 +16,10 @@ export const createGenially = async (req: Request, res: Response) => {
 
 export const renameGenially = async (req: Request, res: Response) => {
     const id = req.params.id;
-    const {name} = req.body;
+    const { name } = req.body;
     const renameGeniallyService = new RenameGeniallyService(repository);
 
-    const genially = await renameGeniallyService.execute(id, name);
+    const genially = await renameGeniallyService.execute({ id, newName: name });
 
     res.status(200).send(genially);
 };
