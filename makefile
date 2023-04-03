@@ -2,7 +2,7 @@ SERVICE := api
 IMAGE := genially-backend
 
 build:
-	@docker build . -t $(IMAGE):dev --no-cache
+	@docker build . -t $(IMAGE):dev
 
 dev: build
 	docker-compose up $(SERVICE)
