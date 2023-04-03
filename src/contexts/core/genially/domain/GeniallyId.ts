@@ -1,4 +1,4 @@
-import { StringValueObject } from "../../../shared/StringValueObject";
+import { StringValueObject } from "../../../shared/ValueObjects/StringValueObject";
 
 export default class GeniallyId extends StringValueObject{
     constructor(value: string) {

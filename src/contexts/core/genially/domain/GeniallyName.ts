@@ -1,4 +1,4 @@
-import { StringValueObject } from "../../../shared/StringValueObject";
+import { StringValueObject } from "../../../shared/ValueObjects/StringValueObject";
 import { GeniallyFieldLengthExceeded } from "./GeniallyFieldLengthExceeded";
 
 export default class GeniallyName extends StringValueObject {

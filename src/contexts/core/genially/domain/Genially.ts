@@ -1,4 +1,4 @@
-import { DateValueObject } from "../../../shared/DateValueObject";
+import { DateValueObject } from "../../../shared/ValueObjects/DateValueObject";
 import GeniallyCreatedAt from "./GeniallyCreatedAt";
 import GeniallyDeletedAt from "./GeniallyDeletedAt";
 import GeniallyDescription from "./GeniallyDescription";
