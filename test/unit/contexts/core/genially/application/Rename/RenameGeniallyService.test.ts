@@ -16,6 +16,7 @@ describe("RenameGeniallyService", () => {
         const expectedGenially = new Genially(originalGenially.id, new GeniallyName(newName), originalGenially.description, originalGenially.createdAt);
         const repository: GeniallyRepository = {
             save: jest.fn(),
+            update: jest.fn(),
             find: jest.fn().mockReturnValue(originalGenially),
             delete: jest.fn()
         };
@@ -23,8 +24,7 @@ describe("RenameGeniallyService", () => {
 
         await renameGeniallyService.execute({ id, newName });
 
-        expect(repository.find).toHaveBeenCalledWith(new GeniallyId(id));
-        expect(repository.save).toHaveBeenCalledWith(expectedGenially);
+        expect(repository.update).toHaveBeenCalledWith(expectedGenially);
     });
 
     it("should generate an exception for names shorter than 3 characters", async () => {
@@ -37,6 +37,7 @@ describe("RenameGeniallyService", () => {
             const expectedGenially = new Genially(originalGenially.id, new GeniallyName(newName), originalGenially.description, originalGenially.createdAt);
             const repository: GeniallyRepository = {
                 save: jest.fn(),
+                update: jest.fn(),
                 find: jest.fn().mockReturnValue(originalGenially),
                 delete: jest.fn()
             };
@@ -59,6 +60,7 @@ describe("RenameGeniallyService", () => {
             const expectedGenially = new Genially(originalGenially.id, new GeniallyName(newName), originalGenially.description, originalGenially.createdAt);
             const repository: GeniallyRepository = {
                 save: jest.fn(),
+                update: jest.fn(),
                 find: jest.fn().mockReturnValue(originalGenially),
                 delete: jest.fn()
             };

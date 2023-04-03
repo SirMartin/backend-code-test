@@ -9,6 +9,7 @@ describe("DeleteGeniallyService", () => {
     it("should delete a Genially", async () => {
         const repository: GeniallyRepository = {
             save: jest.fn(),
+            update: jest.fn(),
             find: jest.fn(),
             delete: jest.fn()
         };

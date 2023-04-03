@@ -29,14 +29,36 @@ describe("InMemoryGeniallyRepository", () => {
         expect(anotherGenially).toEqual(anotherExpectedGenially);
     });
 
-    it("delete should remove the saved Genially", async () => {
-        const expectedGenially = Genially.create(new GeniallyId("an_id"), new GeniallyName("a_name"), new GeniallyDescription("a_description"));
+    it("delete should set the deleted date to the saved Genially", async () => {
+        const id = "an_id";
+        const name = "a_name";
+        const description = "a_description";
+        const expectedGenially = Genially.create(new GeniallyId(id), new GeniallyName(name), new GeniallyDescription(description));
         const inMemoryRepository = new InMemoryGeniallyRepository();
 
         await inMemoryRepository.save(expectedGenially);
-        await inMemoryRepository.delete(new GeniallyId("an_id"));
+        const genially = await inMemoryRepository.find(new GeniallyId(id));
+        expect(genially).toEqual(expectedGenially);
+        
+        await inMemoryRepository.delete(new GeniallyId(id));
+        const deletedGenially = await inMemoryRepository.find(new GeniallyId(id));
+        expect(deletedGenially).toEqual(undefined);
+    });
 
-        const genially = await inMemoryRepository.find(new GeniallyId("an_id"));
-        expect(genially).toEqual(undefined);
+    it("update should change the Genially and set the modified date", async () => {
+        const id = "an_id";
+        const name = "a_name";
+        const new_name = "a_new_name";
+        const description = "a_description";
+        const originalGenially = Genially.create(new GeniallyId(id), new GeniallyName(name), new GeniallyDescription(description));
+        const updatedGenially = Genially.create(new GeniallyId(id), new GeniallyName(new_name), new GeniallyDescription(description));
+        const inMemoryRepository = new InMemoryGeniallyRepository();
+
+        await inMemoryRepository.save(originalGenially);
+
+        await inMemoryRepository.update(updatedGenially);
+        const genially = await inMemoryRepository.find(new GeniallyId(id));
+        expect(genially.name.value).toEqual("a_new_name");
+        expect(genially.modifiedAt.value).not.toEqual(undefined);
     });
 });

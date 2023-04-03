@@ -14,11 +14,18 @@ export default class InMemoryGeniallyRepository implements GeniallyRepository {
     this.geniallys.push(genially);
   }
 
+  async update(genially: Genially): Promise<void> {
+    genially?.update();
+    await this.save(genially);
+  }
+
   async find(id: GeniallyId): Promise<Genially> {
-    return this.geniallys.find((genially) => genially.id.value === id.value);
+    return this.geniallys.find(
+      (genially) => genially.id.value === id.value && !genially.isDeleted());
   }
 
   async delete(id: GeniallyId): Promise<void> {
-    this.geniallys = this.geniallys.filter((genially) => genially.id.value !== id.value);
+    const geniallyToDelete = await this.find(id);
+    geniallyToDelete?.delete();
   }
 }

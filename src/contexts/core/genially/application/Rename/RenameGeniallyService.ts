@@ -16,7 +16,7 @@ export default class RenameGeniallyService {
 
     const renamedGenially = new Genially(genially.id, new GeniallyName(req.newName), genially.description, genially.createdAt);
 
-    await this.repository.save(renamedGenially);
+    await this.repository.update(renamedGenially);
 
     return renamedGenially;
   }

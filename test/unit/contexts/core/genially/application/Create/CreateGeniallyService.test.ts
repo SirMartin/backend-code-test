@@ -11,6 +11,7 @@ describe("CreateGeniallyService", () => {
     it("should create a Genially", async () => {
         const repository: GeniallyRepository = {
             save: jest.fn(),
+            update: jest.fn(),
             find: jest.fn(),
             delete: jest.fn()
         };
@@ -29,6 +30,7 @@ describe("CreateGeniallyService", () => {
         expect(() => {
             const repository: GeniallyRepository = {
                 save: jest.fn(),
+                update: jest.fn(),
                 find: jest.fn(),
                 delete: jest.fn()
             };
@@ -48,6 +50,7 @@ describe("CreateGeniallyService", () => {
         expect(() => {
             const repository: GeniallyRepository = {
                 save: jest.fn(),
+                update: jest.fn(),
                 find: jest.fn(),
                 delete: jest.fn()
             };
@@ -67,6 +70,7 @@ describe("CreateGeniallyService", () => {
         expect(() => {
             const repository: GeniallyRepository = {
                 save: jest.fn(),
+                update: jest.fn(),
                 find: jest.fn(),
                 delete: jest.fn()
             };

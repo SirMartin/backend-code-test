@@ -7,12 +7,12 @@ import GeniallyName from "./GeniallyName";
 import GeniallyModifiedAt from "./GeniallyUpdatedAt";
 
 export default class Genially {
-  private readonly _id: GeniallyId;
-  private readonly _name: GeniallyName;
-  private readonly _description: GeniallyDescription;
-  private readonly _createdAt: GeniallyCreatedAt;
-  private readonly _modifiedAt: GeniallyModifiedAt;
-  private readonly _deletedAt: GeniallyDeletedAt;
+  private _id: GeniallyId;
+  private _name: GeniallyName;
+  private _description: GeniallyDescription;
+  private _createdAt: GeniallyCreatedAt;
+  private _modifiedAt: GeniallyModifiedAt;
+  private _deletedAt: GeniallyDeletedAt;
 
   constructor(id: GeniallyId, name: GeniallyName, description?: GeniallyDescription, createdAt?: DateValueObject) {
     this._id = id;
@@ -56,5 +56,17 @@ export default class Genially {
 
   get deletedAt(): GeniallyDeletedAt {
     return this._deletedAt;
+  }
+
+  update(): void {
+    this._modifiedAt = new GeniallyModifiedAt(new Date());
+  }
+
+  delete(): void {
+    this._deletedAt = new GeniallyDeletedAt(new Date());
+  }
+
+  isDeleted(): boolean {
+    return this._deletedAt !== undefined;
   }
 }
