@@ -1,6 +1,6 @@
-import GeniallyRepository from "../../../../../src/contexts/core/genially/domain/GeniallyRepository";
-import Genially from "../../../../../src/contexts/core/genially/domain/Genially";
-import DeleteGeniallyService from "../../../../../src/contexts/core/genially/application/DeleteGeniallyService"
+import GeniallyRepository from "../../../../../../src/contexts/core/genially/domain/GeniallyRepository";
+import Genially from "../../../../../../src/contexts/core/genially/domain/Genially";
+import DeleteGeniallyService from "../../../../../../src/contexts/core/genially/application/DeleteGeniallyService"
 
 describe("DeleteGeniallyService", () => {
     it("should delete a Genially", async () => {
