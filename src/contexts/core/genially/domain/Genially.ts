@@ -5,7 +5,7 @@ import GeniallyDeletedAt from "./GeniallyDeletedAt";
 import GeniallyDescription from "./GeniallyDescription";
 import GeniallyId from "./GeniallyId";
 import GeniallyName from "./GeniallyName";
-import GeniallyModifiedAt from "./GeniallyUpdatedAt";
+import GeniallyModifiedAt from "./GeniallyModifiedAt";
 
 type GeniallyPrimitives = {
   id: string,

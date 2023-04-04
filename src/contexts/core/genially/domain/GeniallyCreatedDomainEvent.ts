@@ -6,7 +6,7 @@ type GeniallyCreatedDomainEventAttributes = {
 }
 
 export class GeniallyCreatedDomainEvent extends DomainEvent {
-    static readonly EVENT_NAME = "genially_created";
+    static readonly eventName = "genially_created";
 
     readonly name: string;
     readonly description: string;
