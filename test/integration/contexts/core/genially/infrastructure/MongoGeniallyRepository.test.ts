@@ -6,7 +6,7 @@ import MongoGeniallyRepository from "../../../../../../src/contexts/core/geniall
 
 describe("MongoGeniallyRepository", () => {
     it("should save a Genially", async () => {
-        const id = "d25bc90b-8b2b-4e18-b6aa-929330b5f6a7"
+        const id = "d25bc90b-8b2b-4e18-b6aa-929330b5f6a7";
         const expectedGenially = Genially.create(new GeniallyId(id), new GeniallyName("a_name"), new GeniallyDescription("a_description"));
         const mongoRepository = new MongoGeniallyRepository();
 

@@ -1,4 +1,4 @@
-import { DateValueObject } from "../../../shared/ValueObjects/DateValueObject";
+import { AggregateRoot } from "../../../shared/domain/AggregateRoot";
 import GeniallyCreatedAt from "./GeniallyCreatedAt";
 import GeniallyDeletedAt from "./GeniallyDeletedAt";
 import GeniallyDescription from "./GeniallyDescription";
@@ -6,7 +6,7 @@ import GeniallyId from "./GeniallyId";
 import GeniallyName from "./GeniallyName";
 import GeniallyModifiedAt from "./GeniallyUpdatedAt";
 
-export default class Genially {
+export default class Genially extends AggregateRoot{
   private _id: GeniallyId;
   private _name: GeniallyName;
   private _description: GeniallyDescription;
@@ -15,6 +15,7 @@ export default class Genially {
   private _deletedAt: GeniallyDeletedAt;
 
   constructor(id: GeniallyId, name: GeniallyName, description?: GeniallyDescription, createdAt?: GeniallyCreatedAt, modifiedAt?: GeniallyModifiedAt, deletedAt?: GeniallyDeletedAt) {
+    super();
     this._id = id;
     this._name = name;
     this._description = description;

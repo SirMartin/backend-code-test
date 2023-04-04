@@ -1,5 +1,5 @@
 import { Filter } from "mongodb";
-import MongoDbClient from "../../../shared/persistance/MongoDbClient";
+import MongoDbClient from "../../../shared/infrastructure/persistance/MongoDbClient";
 import Genially from "../domain/Genially";
 import GeniallyId from "../domain/GeniallyId";
 import GeniallyRepository from "../domain/GeniallyRepository";
@@ -11,7 +11,7 @@ interface GeniallyDocument {
   createdAt: Date;
   modifiedAt: Date;
   deletedAt?: Date;
-};
+}
 
 export default class MongoGeniallyRepository implements GeniallyRepository {
 
