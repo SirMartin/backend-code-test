@@ -13,7 +13,7 @@ describe("MongoGeniallyRepository", () => {
         await mongoRepository.save(expectedGenially);
 
         const genially = await mongoRepository.find(new GeniallyId(id));
-        expect(genially).toEqual(expectedGenially);
+        expect(genially.toPrimitives()).toEqual(expectedGenially.toPrimitives());
     });
 
     it("find should return a saved a Genially", async () => {
@@ -27,9 +27,9 @@ describe("MongoGeniallyRepository", () => {
         await mongoRepository.save(anotherExpectedGenially);
 
         const genially = await mongoRepository.find(new GeniallyId(expectedId));
-        expect(genially).toEqual(expectedGenially);
+        expect(genially.toPrimitives()).toEqual(expectedGenially.toPrimitives());
         const anotherGenially = await mongoRepository.find(new GeniallyId(anotherExpectedId));
-        expect(anotherGenially).toEqual(anotherExpectedGenially);
+        expect(anotherGenially.toPrimitives()).toEqual(anotherExpectedGenially.toPrimitives());
     });
 
     it("delete should set the deleted date to the saved Genially", async () => {
@@ -41,7 +41,7 @@ describe("MongoGeniallyRepository", () => {
 
         await mongoRepository.save(expectedGenially);
         const genially = await mongoRepository.find(new GeniallyId(id));
-        expect(genially).toEqual(expectedGenially);
+        expect(genially.toPrimitives()).toEqual(expectedGenially.toPrimitives());
         
         await mongoRepository.delete(new GeniallyId(id));
         const deletedGenially = await mongoRepository.find(new GeniallyId(id));
