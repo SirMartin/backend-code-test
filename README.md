@@ -1,3 +1,5 @@
+> **Please check [SOLUTION](SOLUTION.md) to find the way I try to solve this code test.**
+
 Welcome to this code test! :)
 
 The main objective of this technical excercise is for you to get a good grasp of what kind of problems we encounter on Genially. We wouldn't want you to find some nasty surprises if you decide to join us.
