@@ -1,15 +1,9 @@
 version: '3.7'
 
+networks:
+  code_test:
+
 services:
-  mongo:
-    image: mongo
-    volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
   api:
     build:
       context: .
@@ -17,6 +11,8 @@ services:
       target: base
     volumes:
       - ./src:/app/src
+    networks:
+      - "code_test"
     container_name: genially-backend
     expose:
       - '3000'
@@ -25,3 +21,15 @@ services:
     depends_on:
       - mongo
     command: npm run dev
+  mongo:
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    networks:
+      - "code_test"
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: admin
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root

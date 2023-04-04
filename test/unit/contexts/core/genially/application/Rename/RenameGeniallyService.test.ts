@@ -47,8 +47,8 @@ describe("RenameGeniallyService", () => {
 
             expect(repository.find).toHaveBeenCalledWith(new GeniallyId(id));
             expect(repository.save).toHaveBeenCalledWith(expectedGenially);
-        }).toThrow(GeniallyFieldLengthExceeded)
-    })
+        }).toThrow(GeniallyFieldLengthExceeded);
+    });
 
     it("should generate an exception for names larger than 20 characters", async () => {
         expect(() => {
@@ -70,6 +70,6 @@ describe("RenameGeniallyService", () => {
 
             expect(repository.find).toHaveBeenCalledWith(new GeniallyId(id));
             expect(repository.save).toHaveBeenCalledWith(expectedGenially);
-        }).toThrow(GeniallyFieldLengthExceeded)
-    })
+        }).toThrow(GeniallyFieldLengthExceeded);
+    });
 });

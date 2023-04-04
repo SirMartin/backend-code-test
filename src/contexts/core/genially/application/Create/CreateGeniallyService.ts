@@ -3,6 +3,8 @@ import GeniallyDescription from "../../domain/GeniallyDescription";
 import GeniallyId from "../../domain/GeniallyId";
 import GeniallyName from "../../domain/GeniallyName";
 import GeniallyRepository from "../../domain/GeniallyRepository";
+import { CreateGeniallyServiceRequest } from "./CreateGeniallyServiceRequest";
+import { CreateGeniallyServiceResponse } from "./CreateGeniallyServiceResponse";
 
 export default class CreateGeniallyService {
   constructor(private readonly repository: GeniallyRepository) {}

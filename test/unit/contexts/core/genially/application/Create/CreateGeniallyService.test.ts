@@ -43,8 +43,8 @@ describe("CreateGeniallyService", () => {
             createGeniallyService.execute({ id, name, description });
 
             expect(repository.save).toHaveBeenCalledWith(expectedGenially);
-        }).toThrow(GeniallyFieldLengthExceeded)
-    })
+        }).toThrow(GeniallyFieldLengthExceeded);
+    });
 
     it("should generate an exception for names larger than 20 characters", async () => {
         expect(() => {
@@ -63,8 +63,8 @@ describe("CreateGeniallyService", () => {
             createGeniallyService.execute({ id, name, description });
 
             expect(repository.save).toHaveBeenCalledWith(expectedGenially);
-        }).toThrow(GeniallyFieldLengthExceeded)
-    })
+        }).toThrow(GeniallyFieldLengthExceeded);
+    });
 
     it("should generate an exception for a description larger than 125 characters", async () => {
         expect(() => {
@@ -83,6 +83,6 @@ describe("CreateGeniallyService", () => {
             createGeniallyService.execute({ id, name, description });
 
             expect(repository.save).toHaveBeenCalledWith(expectedGenially);
-        }).toThrow(GeniallyFieldLengthExceeded)
-    })
+        }).toThrow(GeniallyFieldLengthExceeded);
+    });
 });

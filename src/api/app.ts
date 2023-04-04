@@ -7,6 +7,12 @@ import lusca from "lusca";
 import * as healthController from "./controllers/health";
 import * as geniallyController from "./controllers/genially";
 
+// I tried for almost 2 hours making a normal import and config it later, but it fails all the time, something related to typescript,
+// finally I found this way that works, don't know really the difference, but eslint doesn't like, so... Sorry if this is too bad,
+// node is not my world, and I am suffering a little with dependencies.
+/* eslint @typescript-eslint/no-var-requires: "off" */
+require("dotenv").config({ path: "./.env" });
+
 // Create Express server
 const app = express();
 

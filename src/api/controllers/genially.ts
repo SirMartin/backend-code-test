@@ -3,8 +3,9 @@ import CreateGeniallyService from "../../contexts/core/genially/application/Crea
 import RenameGeniallyService from "../../contexts/core/genially/application/Rename/RenameGeniallyService";
 import DeleteGeniallyService from "../../contexts/core/genially/application/Delete/DeleteGeniallyService";
 import InMemoryGeniallyRepository from "../../contexts/core/genially/infrastructure/InMemoryGeniallyRepository";
+import MongoGeniallyRepository from "../../contexts/core/genially/infrastructure/MongoGeniallyRepository";
 
-const repository = new InMemoryGeniallyRepository();
+const repository = new MongoGeniallyRepository();
 
 export const createGenially = async (req: Request, res: Response) => {
     const createGeniallyService = new CreateGeniallyService(repository);

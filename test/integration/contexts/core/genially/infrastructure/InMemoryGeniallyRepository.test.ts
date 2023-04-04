@@ -48,10 +48,10 @@ describe("InMemoryGeniallyRepository", () => {
     it("update should change the Genially and set the modified date", async () => {
         const id = "d25bc90b-8b2b-4e18-b6aa-929330b5f6a7";
         const name = "a_name";
-        const new_name = "a_new_name";
+        const newName = "a_new_name";
         const description = "a_description";
         const originalGenially = Genially.create(new GeniallyId(id), new GeniallyName(name), new GeniallyDescription(description));
-        const updatedGenially = Genially.create(new GeniallyId(id), new GeniallyName(new_name), new GeniallyDescription(description));
+        const updatedGenially = Genially.create(new GeniallyId(id), new GeniallyName(newName), new GeniallyDescription(description));
         const inMemoryRepository = new InMemoryGeniallyRepository();
 
         await inMemoryRepository.save(originalGenially);
