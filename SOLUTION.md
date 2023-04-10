@@ -52,6 +52,8 @@ Well, as I wrote in stage 3, I have left to subscribe to the specific [GeniallyC
 
 Also, there is a test that fails occasionally, because of the creation date, but I didn´t find a way to fix it that I like enough.
 
+For future refactoring, a very good idea, if it´s needed, would be to improve the performance by implementing CQRS to split the reads and writes of the application. In that way, we can escalate separately the ins and outs, because probably the read/use of genially's would be 100 times higher than the creation/deletion of existing ones.
+
 #### Thanks for your time!
 
 ### Notes
